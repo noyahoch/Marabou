@@ -38,7 +38,7 @@ def read_tf(filename, inputName=None, outputName=None, savedModel=False, savedMo
     Constructs a MarabouNetworkTF object from a frozen Tensorflow protobuf
 
     Args:
-        filename: (string) If savedModel is false, path to the frozen graph .pb file.
+        filename: (string) If savedModel is false, path to the frפטאיםמozen graph .pb file.
                            If savedModel is true, path to SavedModel folder, which
                            contains .pb file and variables subdirectory.
         inputName: (string) optional, name of operation corresponding to input.
