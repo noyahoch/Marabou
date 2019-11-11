@@ -21,7 +21,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>ex1-noyahoch/README.md at master · impr-2019/ex1-noyahoch</title>
+  <title>ex1-noyahoch/answer_q1.txt at master · impr-2019/ex1-noyahoch</title>
     <meta name="description" content="Contribute to impr-2019/ex1-noyahoch development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.cs.huji.ac.il/fluidicon.png" title="GitHub">
@@ -31,10 +31,10 @@
     <meta property="og:image" content="https://github.cs.huji.ac.il/avatars/u/1924?s=400" /><meta property="og:site_name" content="GitHub Enterprise" /><meta property="og:type" content="object" /><meta property="og:title" content="impr-2019/ex1-noyahoch" /><meta property="og:url" content="https://github.cs.huji.ac.il/impr-2019/ex1-noyahoch" /><meta property="og:description" content="Contribute to impr-2019/ex1-noyahoch development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.cs.huji.ac.il/">
-  <link rel="web-socket" href="wss://github.cs.huji.ac.il/_sockets/VjI6MTMyNjc6YWFiN2E3OTM4Y2RiYjk2MmFmN2EzNWE2ZmUzNDZmOTU3MTQ1ZWRjOTlkOWRlOTkyZmJhZTliZmU1OGQ5MTE3OA==--2f0877c5b72c4ba653e65819a507046e1d45bf21">
+  <link rel="web-socket" href="wss://github.cs.huji.ac.il/_sockets/VjI6MTMyNjc6NWRlMWFlZmM1ODA3NTMyZDEyYjQ4YmIyNjQxNzJmYThhY2JiZGNiNThlYzkxNTUyNTkwMDViZDA1NjAzNDM5Yw==--aaa6b243dd4774a834626636f87df7dae15f5075">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="2e650d70-d276-4a56-8afe-d81dfbb01bff" data-pjax-transient>
+  <meta name="request-id" content="4e65ecae-0c71-40cc-97cd-2dae5d65fa22" data-pjax-transient>
 
 
   
@@ -65,14 +65,14 @@
   <meta http-equiv="x-pjax-version" content="819278cd00f3adb1f7402c3c946f9ab1">
   
 
-      <link href="https://github.cs.huji.ac.il/impr-2019/ex1-noyahoch/commits/master.atom?token=AAADDcS-M2dh-TfGfZs5kNgrGB8E3EjYks671p6dwA%3D%3D" rel="alternate" title="Recent Commits to ex1-noyahoch:master" type="application/atom+xml">
+      <link href="https://github.cs.huji.ac.il/impr-2019/ex1-noyahoch/commits/master.atom?token=AAADDdLVxJtBK2NawnEM0zoA2LA8hYj7ks671p6kwA%3D%3D" rel="alternate" title="Recent Commits to ex1-noyahoch:master" type="application/atom+xml">
 
   <meta name="go-import" content="github.cs.huji.ac.il/impr-2019/ex1-noyahoch git https://github.cs.huji.ac.il/impr-2019/ex1-noyahoch.git">
 
   
 
 
-    <link rel="canonical" href="https://github.cs.huji.ac.il/impr-2019/ex1-noyahoch/blob/master/README.md" data-pjax-transient>
+    <link rel="canonical" href="https://github.cs.huji.ac.il/impr-2019/ex1-noyahoch/blob/master/answer_q1.txt" data-pjax-transient>
 
 
 
@@ -134,7 +134,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=CaW4ikBIWonfBkEE9Or2ae6dIewfClw+GA2CXpzPk/KimNicshfnIQwfxyy4/YQg6u0m6HZT+Qkxi8wtl9LL9w=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=xau9n55AEGbXwGN81HXqzSxUT8z/wMqPzECwmB5pS2Rult2JbB+tzgTZ5VSYYpiEKCRIyJaZb7jlxv7rFXQTYQ=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -341,7 +341,7 @@
           <span class="link-gray">Set your status</span>
       </div>
 </summary>    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="KBsMCFKDqkRahZ7fz0/LUQgYVhHJYiSqK+qk6YPs7h60eRUHFtJ1+bL0EbFQ19AUlamUYAe6vctif6E4eyIqHw==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="mDT3RYV4pFk8eDFNq6yYAQ6uhE9tFYA5/JkYPuevoEMEVu5KwSl75NQJviM0NINEkx9GPqPNGVi1DB3vH2FkQg==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -458,7 +458,7 @@
     <div class="dropdown-divider"></div>
     <a role="menuitem" class="dropdown-item" href="https://help.github.com/enterprise/2.17/user" data-ga-click="Header, go to help, text:help">Help</a>
     <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="X5GmaMKxkLPfkIC6c46xjGPVYaf78n3JFW8r0LHehyK6U4OfqNj7gf4unwVis02yWXUAqTf+ym+A4BIywxs6QA==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="lU0pAZSyfZchEDNXabWvvR6CughiZsE4Y4UBc+URhvNwjwz2/tsWpQCuLOh4iFODJCLbBq5qdp72CjiRl9Q7kQ==" />
       
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
         Sign out
@@ -507,7 +507,7 @@
 
   <li>
     
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="RCurbC/cJYUvFrxW+L0MpXXENfiNoIkw5wtLTEj8h7xM4x0VjQhEQhjiJ0KjfTrZG21tn2Td42GYviHI129+2g==" />      <input type="hidden" name="repository_id" value="11983">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="0WcrOfdqlqWWK0LnHyIOK7N1vhLX8WWR0miHVhrN9cvZr51AVb73YqHf2fNE4jhX3dzmdT6MD8Ct3e3ShV4MrQ==" />      <input type="hidden" name="repository_id" value="11983">
 
       <details class="details-reset details-overlay select-menu float-left">
         <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-ga-click="Repository, click Watch settings, action:blob#show">            <span data-menu-button>
@@ -582,7 +582,7 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/impr-2019/ex1-noyahoch/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="FggvR1TxJWVkc5FN023NusjPo2hip2vC/Ve5n5A8U220iLT1KYvxnfTC2OsS75O3uJlH5qVM4cTp1jSt2uHIkw==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/impr-2019/ex1-noyahoch/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Dn1lwQcXEHuGXGszQG+XAQPPk9faJUe9H3Suq2GZ5ces/f5zem3EgxbtIpWB7ckMc5l3WR3OzbsL9SOZK0R+OQ==" />
       <input type="hidden" name="context" value="repository"></input>
       <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar impr-2019/ex1-noyahoch" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Unstar
@@ -591,7 +591,7 @@
           0
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/impr-2019/ex1-noyahoch/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="WZtkAQHHNgB6pW2cUCDRjabEv4e2WY3nYCYwwEV355UP67pZRNEwxB0mzm8hSvRcloGWKUWQ1z6J3hNn7x9sXw==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/impr-2019/ex1-noyahoch/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="zdlhzu2fuobmgl0dKkrxEY30wRVgr5mwlYFxRClR1pKbqb+WqIm8QoEB/u5bINTAvbHou5Nmw2l8eVLjgzldWA==" />
       <input type="hidden" name="context" value="repository"></input>
       <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star impr-2019/ex1-noyahoch" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Star
@@ -675,9 +675,9 @@
 
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/impr-2019/ex1-noyahoch/blob/ca05d1430949628cf013a9f231afcf3c65310698/README.md">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/impr-2019/ex1-noyahoch/blob/ca05d1430949628cf013a9f231afcf3c65310698/answer_q1.txt">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:14a5bcad9c17cd904709707a00243ffe -->
+    <!-- blob contrib key: blob_contributors:v21:41579394a662e787b81d740daccae355 -->
 
     
 
@@ -693,7 +693,7 @@
     <span class="css-truncate-target">master</span>
   </summary>
 
-  <details-menu class="select-menu-modal position-absolute" style="z-index: 99;" src="/impr-2019/ex1-noyahoch/ref-list/master/README.md?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="select-menu-modal position-absolute" style="z-index: 99;" src="/impr-2019/ex1-noyahoch/ref-list/master/answer_q1.txt?source_action=show&amp;source_controller=blob" preload>
     <include-fragment class="select-menu-loading-overlay anim-pulse">
       <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
     </include-fragment>
@@ -707,13 +707,13 @@
                 data-hotkey="t">
             Find file
           </a>
-          <clipboard-copy value="README.md" class="btn btn-sm BtnGroup-item">
+          <clipboard-copy value="answer_q1.txt" class="btn btn-sm BtnGroup-item">
             Copy path
           </clipboard-copy>
         </div>
       </span>
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal ml-2 mr-3">
-        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/impr-2019/ex1-noyahoch"><span>ex1-noyahoch</span></a></span></span><span class="separator">/</span><strong class="final-path">README.md</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/impr-2019/ex1-noyahoch"><span>ex1-noyahoch</span></a></span></span><span class="separator">/</span><strong class="final-path">answer_q1.txt</strong>
       </h2>
 
       <div class="BtnGroup flex-shrink-0 d-inline-block">
@@ -723,7 +723,7 @@
               data-hotkey="t">
           Find file
         </a>
-        <clipboard-copy value="README.md" class="btn btn-sm BtnGroup-item">
+        <clipboard-copy value="answer_q1.txt" class="btn btn-sm BtnGroup-item">
           Copy path
         </clipboard-copy>
       </div>
@@ -750,7 +750,7 @@
     <div class="Box-body d-flex flex-items-center flex-auto f6 border-bottom-0" >
       <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-2" id="blob_contributors_box">
         <summary class="btn-link" aria-haspopup="dialog">
-          <span><strong>1</strong> contributor</span>
+          <span><strong>0</strong> contributors</span>
         </summary>
         <details-dialog
           class="Box Box--overlay d-flex flex-column anim-fade-in fast"
@@ -765,11 +765,6 @@
             </h3>
           </div>
               <ul class="list-style-none overflow-auto">
-    <li class="Box-row">
-      <a class="link-gray-dark no-underline" href="/gitdle">
-        <img class="avatar mr-1" alt="" src="https://github.cs.huji.ac.il/avatars/u/55?s=40" width="20" height="20" />
-        gitdle
-</a>    </li>
 </ul>
 
         </details-dialog>
@@ -788,27 +783,27 @@
   <div class="text-mono f6">
       4 lines (4 sloc)
       <span class="file-info-divider"></span>
-    40 Bytes
+    246 Bytes
   </div>
 
   <div class="d-flex">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/impr-2019/ex1-noyahoch/raw/master/README.md">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/impr-2019/ex1-noyahoch/blame/master/README.md">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/impr-2019/ex1-noyahoch/commits/master/README.md">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/impr-2019/ex1-noyahoch/raw/master/answer_q1.txt">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/impr-2019/ex1-noyahoch/blame/master/answer_q1.txt">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/impr-2019/ex1-noyahoch/commits/master/answer_q1.txt">History</a>
     </div>
 
 
     <div>
 
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/impr-2019/ex1-noyahoch/edit/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="3b8nm4P5A7GZh/ev8dGOrrAE1hv2lPRoiY11Ycq+Ww5wFHuok0bApG8Sm30tOfMKxpN2ffvT/Yz7rxIPdJRD6A==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/impr-2019/ex1-noyahoch/edit/master/answer_q1.txt" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="NlIEph3ql/xUDah3/E/ct8J9eTkvdKeRVnSoHhLXSaKm9U61XLblmH896N1hGvvyXyqLjVhqAsf8/YWtKgc5CQ==" />
               <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
                 aria-label="Edit this file" data-hotkey="e" data-disable-with>
                 <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
               </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/impr-2019/ex1-noyahoch/delete/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ZTffDM16R2Xy1UE7QvD4TCDT0tGxDK7A5tqkesCMp3P2lF5ZdYndU/WnyWIu7DtfGFu47N5HFxCgMYkep+/Jxw==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/impr-2019/ex1-noyahoch/delete/master/answer_q1.txt" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="PxNaAJQ7zMZHG+jmgbY6RQMtvGCptDipeK0BV6rXIs5yxtWzaGN69KS9dNymC2vBetyT/6F9wIOtxxd93p7pvA==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete this file" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -818,12 +813,41 @@
 </div>
 
       
-  <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-    <article class="markdown-body entry-content p-5" itemprop="text"><p>noyahoch
-readme.md
-answer_q1.txt
-sol1.py</p>
-</article>
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tr>
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line">Answer:</td>
+      </tr>
+      <tr>
+        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line">The quantize process includes the definition of q_i as a weighted average of z_i segment.</td>
+      </tr>
+      <tr>
+        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line">If we will try to define q_i in this way on an empty segment we will try to divide at zero</td>
+      </tr>
+      <tr>
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line">(sum of all the pixel at z_i) and the program will crash.</td>
+      </tr>
+</table>
+
+  <details class="details-reset details-overlay BlobToolbar position-absolute js-file-line-actions dropdown d-none" aria-hidden="true">
+    <summary class="btn-octicon ml-0 px-2 p-0 bg-white border border-gray-dark rounded-1" aria-label="Inline file action toolbar">
+      <svg class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>
+    </summary>
+    <details-menu>
+      <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2" style="width:185px">
+        <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;" data-original-text="Copy lines">Copy lines</clipboard-copy></li>
+        <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</clipboard-copy></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/impr-2019/ex1-noyahoch/blame/ca05d1430949628cf013a9f231afcf3c65310698/answer_q1.txt">View git blame</a></li>
+      </ul>
+    </details-menu>
+  </details>
+
   </div>
 
     </div>
@@ -855,7 +879,7 @@ sol1.py</p>
 <div class="footer container-lg width-full px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2019 <span title="0.16943s from github-cs-huji-ac-il-primary">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2019 <span title="0.16341s from github-cs-huji-ac-il-primary">GitHub</span>, Inc.</li>
         <li class="mr-3"><a href="https://help.github.com/enterprise/2.17">Help</a></li>
           <li class="mr-3"><a href="mailto:system@cs.huji.ac.il">Support</a></li>
     </ul>
