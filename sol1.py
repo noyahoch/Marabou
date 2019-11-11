@@ -188,7 +188,7 @@ def compute_z(q, n_quants):
     :param z: previous z
     :return: new segments splitting
     '''
-    new_z = np.zeros(n_quants + 1)
+    new_z =  np.zeros(n_quants + 1)
     new_z[-1] = MAX_TONE_LEVEL
     new_z = new_z.astype(np.uint8)
     for i in range(1, len(new_z) - 1):
