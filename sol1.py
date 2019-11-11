@@ -4,24 +4,18 @@ from imageio import imread
 import matplotlib.pyplot as plt
 from sklearn import cluster
 
-
-'''
-TODO: ERROR CASES, CHECKING
-1. check if quantize is good
-2. be sure about histogram
-3. error cases 
-BYE 
-'''
-
-
 TO_YIQ = [[0.299, 0.587, 0.114], [0.596, -0.275, -0.321],
-          [0.212, -0.523, 0.311]] # constants that transporm rgb rep to yiq rep
+          [0.212, -0.523, 0.311]]  # constants that transporm rgb rep to yiq rep
 
 MAX_TONE_LEVEL = 255
 MIN_TONE_LEVEL = 0
 GRAYSCAL_REP = 1
 COLOR_REP = 2
 RGB_DIMS = 3
+
+REPRESENTATION_ERROR = "There is not such representation"
+QUANTIZE_ERROR = "Iteration or quants are not big enough"
+SEGMENT_ERROR = "There is at least one gray-level with more pixels that pixels/n_quants"
 
 
 def check_RGB(image):
@@ -48,10 +42,13 @@ def read_image(filename, representation):
     :return: matrix represents the image
     '''
     image = imread(filename)
-    if representation == GRAYSCAL_REP and check_RGB(image):
-        image = rgb2gray(image)
-    if representation == COLOR_REP:
+    if representation == GRAYSCAL_REP:
+        if check_RGB(image):
+            image = rgb2gray(image)
+    elif representation == COLOR_REP:
         image = image.astype(np.float64) / MAX_TONE_LEVEL
+    else:
+        raise Exception(REPRESENTATION_ERROR)
     image = np.array(image)
     return image
 
@@ -89,11 +86,11 @@ def convert_image(im, trans_mat):
     mat = np.ndarray(shape=(h, w, 3))
     for k in range(3):
         mat[:, :, 0] = trans_mat[0][0] * im[:, :, 0] + \
-                       trans_mat[0][1] * im[:,:,1] + trans_mat[0][2] * im[:, :, 2]
+                       trans_mat[0][1] * im[:, :, 1] + trans_mat[0][2] * im[:, :, 2]
         mat[:, :, 1] = trans_mat[1][0] * im[:, :, 0] + \
-                       trans_mat[1][1] * im[:,:,1] + trans_mat[1][2] * im[:, :, 2]
+                       trans_mat[1][1] * im[:, :, 1] + trans_mat[1][2] * im[:, :, 2]
         mat[:, :, 2] = trans_mat[2][0] * im[:, :, 0] + \
-                       trans_mat[2][1] * im[:,:,1] + trans_mat[2][2] * im[:, :, 2]
+                       trans_mat[2][1] * im[:, :, 1] + trans_mat[2][2] * im[:, :, 2]
     return mat
 
 
@@ -123,52 +120,43 @@ Q4
 '''
 
 
+def histogram_equalize_helper(y):
+    '''
+
+    :param y: grayscale 2d array rep of image
+    :return: image after histogram, histogram of the original image, histogram of equalized image
+    '''
+    y = np.around(y * MAX_TONE_LEVEL)
+    y = y.astype(np.int)
+
+    hist_orig, bins_orig = np.histogram(y, MAX_TONE_LEVEL + 1, (0, 255))
+    eq_hist = np.cumsum(hist_orig)
+    N = eq_hist[-1]
+    # eq_hist = eq_hist / N
+    min_val = np.min(eq_hist[np.nonzero(eq_hist)])
+    dif = eq_hist[MAX_TONE_LEVEL] - min_val
+    eq_hist = np.around((eq_hist - min_val) / dif * MAX_TONE_LEVEL)
+
+    im_eq = (eq_hist[y]).astype(np.float64) / MAX_TONE_LEVEL
+    hist_eq, hist_bins = np.histogram(im_eq, MAX_TONE_LEVEL + 1, (0, 1))
+
+    return im_eq, hist_orig, hist_eq
+
+
 def histogram_equalize(im_orig):
     '''
-    TODO CHECK ACCURACY
     :param im_orig: image rep
     :return: image after histogram, histogram of the original image, histogram of equalized image
     '''
-    y = im_orig
+
     if check_RGB(im_orig):
         yiq = rgb2yiq(im_orig)
-        y = yiq[:, :, 0]
-    y = y * MAX_TONE_LEVEL
-
-    hist_orig, bins_orig = np.histogram(y, 256,(0,255))
-    eq_hist = np.cumsum(hist_orig)
-    N = eq_hist[-1]
-    eq_hist = eq_hist / N
-    min_val = np.min(eq_hist[np.nonzero(eq_hist)])
-    dif = eq_hist[MAX_TONE_LEVEL] - min_val
-    eq_hist = np.rint(((eq_hist - min_val) / dif) * MAX_TONE_LEVEL)
-
-    im_eq = eq_hist[y.astype(np.int64)]
-    hist_eq, hist_bins = np.histogram(im_eq, 256,(0,255))
-
-    if check_RGB(im_orig):
-        yiq[:, :, 0] = im_eq / MAX_TONE_LEVEL
-        im_eq = yiq2rgb(yiq)
-
-    # plt images - todo delete
-    plt.imshow(im_orig, cmap='gray')
-    plt.show()
-    plt.imshow(im_eq, cmap='gray')
-    plt.show()
-
-    plt.plot(hist_orig, color='pink', label="Original hist")
-    plt.plot(hist_eq, color='green', label="Eq hist")
-
-    plt.show()
-    first_sum = np.cumsum(hist_orig)
-    second_sum = np.cumsum(hist_eq)
-    plt.plot(first_sum, color='green',
-             label="Eq hist")
-    plt.plot(second_sum, color='blue',
-             label="Eq hist")
-    plt.show()
-
-
+        im_eq_rgb, hist_orig, hist_eq = histogram_equalize_helper(yiq[:, :, 0])
+        yiq[:, :, 0] = im_eq_rgb
+        yiq = yiq2rgb(yiq)
+        im_eq = np.clip(yiq, 0, 1)
+    else:
+        im_eq, hist_orig, hist_eq = histogram_equalize_helper(im_orig)
     return [im_eq, hist_orig, hist_eq]
 
 
@@ -177,49 +165,89 @@ Q5
 '''
 
 
-def compute_z(q,z):
+def compute_first_z(hist, n_quant):
+    '''
+    initialize first z array s.t. in every segment will be an equal number of pixels.
+
+    :param hist: image histogram
+    :param n_quant: quants number to search by
+    :return: z array of segments
+    '''
+    cdf = np.cumsum(hist)
+    if not (hist[np.where(hist >= (cdf[-1] / n_quant))]).shape[0] == 0:
+        raise Exception(SEGMENT_ERROR)
+    z = np.searchsorted(cdf, np.linspace(0, cdf[-1], num=n_quant + 1))
+    z[-1] = MAX_TONE_LEVEL
+    return z
+
+
+def compute_z(q, n_quants):
     '''
     compute segments to quantize
     :param q: mapped values of the segments
     :param z: previous z
     :return: new segments splitting
     '''
-    z[1:-1] = np.round((q[:-1] + q[1:])/2)
+    new_z = np.zeros(n_quants + 1)
+    new_z[-1] = MAX_TONE_LEVEL
+    new_z = new_z.astype(np.uint8)
+    for i in range(1, len(new_z) - 1):
+        new_z[i] = np.ceil((q[i - 1] + q[i]) / 2)
+    return new_z
 
-    return np.round(z)
 
-
-def compute_q(image, z):
+def compute_q(hist, z):
     '''
     compute levels to map the segments
-    :param image: original image
+    :param    image: original image
     :param z: segments splitting
     :return: new map
     '''
-    hist, bins = np.histogram(image,range(257),(0,255))
-    q = np.zeros(len(z)-1)
-    for i in range(len(z)-1):
-        weights = np.array((hist[z[i]:z[i+1]+1]))
-        all_sum = sum(hist[z[i]:z[i+1]+1])
-        rang = np.array([i for i in range(z[i],z[i+1]+1)])
-        q[i] = (np.dot(rang, weights)/all_sum)
-    return np.round(q)
+    q = np.zeros(len(z) - 1)
+    for i in range(len(z) - 1):
+        weighted_sum = np.dot(np.arange(256)[z[i]:z[i + 1]], hist[z[i]:z[i + 1]])
+        all_sum = np.sum(hist[z[i]:z[i + 1]])
+        q[i] = (weighted_sum / all_sum)
+    return q
 
-def compute_error (image ,q,z):
+
+def compute_error(hist, q, z):
     '''
-    TODO: should we normalize
     compute error rate
     :param image: original image
     :param q: map to segments
     :param z: segments
     :return: error rate
     '''
-    hist, bins = np.histogram(image, range(256), (0,255))
-    map =  np.searchsorted(z, bins, side = 'left')
-    map = np.maximum(map-1,0)[:-1]
-    error = np.dot(hist,(bins[:-1]-q[map])**2)
-    return error/(len(image[0]*len(image)))
+    nums = np.arange(256)
+    error = 0
+    for i in range(len(z) - 1):
+        error += np.inner(hist[nums[z[i]:z[i + 1]]], ((nums[z[i]:z[i + 1]] - q[i]) ** 2))
+    return error
 
+
+def quantize_helper(y, n_quant, n_iter):
+    y = np.around(y * MAX_TONE_LEVEL)
+    y = y.astype(np.int)
+    hist, bins = np.histogram(y, range(256), (0, 1))
+    unique = np.count_nonzero(hist)
+    if unique <= n_quant:
+        return [y * MAX_TONE_LEVEL, np.array(0)]  # the image already quantize
+
+    z = compute_first_z(hist, n_quant)
+    error = []
+    q = []
+    for i in range(n_iter):
+        q = compute_q(hist, z)
+        z_next = compute_z(q, n_quant)
+        if np.array_equal(z, z_next):
+            break
+        z = z_next
+        error.append(compute_error(hist, q, z))
+    y = np.searchsorted(np.round(z), y, side='left').astype(int)
+    im_quant = (q[y - 1]).astype(np.float64) / MAX_TONE_LEVEL
+
+    return im_quant, error
 
 
 def quantize(im_orig, n_quant, n_iter):
@@ -230,56 +258,27 @@ def quantize(im_orig, n_quant, n_iter):
     :param n_iter: iterations
     :return: image after quantization, error in each iteration
     '''
-    y = im_orig
+
+    if n_quant <= 0 or n_iter <= 0:
+        raise Exception(QUANTIZE_ERROR)
+
     if check_RGB(im_orig):
         yiq = rgb2yiq(im_orig)
-        y = yiq[:, :, 0]
-    y = y * MAX_TONE_LEVEL
-    hist,bins = np.histogram(y, range(256), (0,1))
-    x = hist[np.where(hist > 0)]
-    if (x.shape[0]<=n_quant):
-        return [y*MAX_TONE_LEVEL, np.array(0)]
-    q = []
-    # first z#
-    cdf = np.cumsum(hist)
-    pixels = cdf[-1]
-    split = np.linspace(0, pixels, num=n_quant+1)
-    z = np.searchsorted(cdf, split)
-    z[-1] = 255
-    error = np.zeros(n_iter)
-    for i in range(n_iter):
-        last_z = z.copy()
-        q = compute_q(y, z)
-        z = compute_z(q,z)
-        error.put(i, compute_error(y,q, z))
-        if np.array_equal(last_z,z):
-            if n_iter -1 > i:
-                error = error [:(i+1)]
-            print("break")
-            break
-
-    all_y = np.searchsorted(z,y, side='left')
-    im_quant = q[all_y.astype(np.int64)-1]
-
-    if check_RGB(im_orig):
-        yiq[:, :, 0] = im_quant / MAX_TONE_LEVEL
+        im_quant, error = quantize_helper(yiq[:, :, 0], n_quant, n_iter)
+        yiq[:, :, 0] = im_quant
         im_quant = yiq2rgb(yiq)
-
-    # plt todo delete
-    plt.imshow(im_quant, cmap='gray')
-    plt.title("after"+ str(error.shape[0]))
-    plt.show()
-
-    plt.plot([i for i in range (error.shape[0])], error, color='pink',label="errors")
-    plt.show()
+    else:
+        im_quant, error = quantize_helper(im_orig, n_quant, n_iter)
 
     return [im_quant, error]
+
 
 '''
 BONUS
 '''
 
-def quantize_rgb (im_orig, n_quant):
+
+def quantize_rgb(im_orig, n_quant):
     '''
     quantize rgb image to n_quant colors
     :param im_orig: image
@@ -293,14 +292,7 @@ def quantize_rgb (im_orig, n_quant):
     palette = model.cluster_centers_
 
     quantized_im = np.reshape(palette[labels], (width, height, palette.shape[1]))
-    # plt.imshow(quantized_im)
-    # plt.show()
+    plt.imshow(quantized_im)
+    plt.show()
     return quantized_im
 
-if __name__ == '__main__':
-    image = read_image('apple.jpeg', 2)
-
-    quantize(image, 6, 60)
-    # histogram_equalize(image)
-    # print(image)
-    # quantize_rgb(image, 6)
