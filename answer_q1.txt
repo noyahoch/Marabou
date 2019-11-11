@@ -1,0 +1,4 @@
+Answer:
+The quantize process includes the definition of q_i as a weighted average of z_i segment.
+If we will try to define q_i in this way on an empty segment we will try to divide at zero
+(sum of all the pixel at z_i) and the program will crash.
