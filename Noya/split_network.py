@@ -1,7 +1,7 @@
-from math import inf
+
 import numpy as np
 import copy
-from maraboupy import Marabou, MarabouUtils
+from maraboupy import Marabou
 
 def printNet(network):
     print("Layers sizes: "+ str(network.layerSizes), end= "; ")
@@ -10,48 +10,58 @@ def printNet(network):
     print("Output size: " +str(network.outputSize))
 
 def split_network_marabou(network, layer):
+    if layer <= 1 or layer >= network.numLayers - 1:
+        raise Exception("Splitting layer is too small/big")
+
+    # deep copy of original network
     first_net, second_net = copy.deepcopy(network), copy.deepcopy(network)
-    first_net.numLayers = layer -1
-    first_net.layerSizes = network.layerSizes[:layer+1]
-    first_net.outputSize = network.layerSizes[layer]
-    first_net.weights = network.weights[:layer+1]
-    first_net.biases = network.biases[:layer+1]
-    first_net.variableRanges()
-    second_net.numLayers = network.numLayers - layer +1
-    second_net.inputSize = network.layerSizes[layer]
-    second_net.layerSizes = network.layerSizes[layer:]
+
+    # change first network
+    first_net.numLayers = layer
+    first_net.layerSizes = first_net.layerSizes[:layer+1]
+    first_net.outputSize = first_net.layerSizes[-1]
+    first_net.weights = first_net.weights[:layer]
+    first_net.biases = first_net.biases[:layer+1]
+
+    # change second network
+    second_net.numLayers = network.numLayers - layer
+    second_net.layerSizes = second_net.layerSizes[layer:]
+    second_net.inputSize = second_net.layerSizes[0]
     second_net.weights = network.weights[layer:]
     second_net.biases = network.biases[layer:]
-    second_net.variableRanges()
-    second_net.numberOfVariables()
-    # second_net.mins = [0] * second_net.inputSize
-    # second_net.maxes = [0] * second_net.inputSize
-    # second_net.means = [0] * (second_net.inputSize +1 )
-    # second_net.ranges = [0] * (second_net.inputSize + 1)
+
+    # avoid zero division
+    first_net.maxLayersize = max(first_net.layerSizes[1:])
+    second_net.maxLayersize = max(second_net.layerSizes[1:])
+    second_net.inputMinimums = [1]* second_net.layerSizes[0]
+    second_net.inputMaximums = [2] *second_net.layerSizes[0]
+    second_net.inputMeans = [1] * second_net.layerSizes[0]
+    second_net.inputRanges = [1]* second_net.layerSizes[0]
+
+    # initialize networks equations
+    network.post_init_settings()
+    first_net.post_init_settings()
+    second_net.post_init_settings()
 
     return [first_net, second_net]
 
-
-# inputs = [0.63,0,0,0.49,-0.49]
 NETWORK_NAME = "/cs/labs/guykatz/noyahoch/Repo/Marabou/resources/nnet/acasxu/ACASXU_experimental_v2a_2_7.nnet"
-PROPERTY_NAME="/cs/labs/guykatz/noyahoch/Repo/Marabou/resources/resources/properties/acas_property_3.txt"
-FIRST_FILE= "/cs/labs/guykatz/noyahoch/Repo/Marabou/Noya/firstnet.nnet"
-SEC_FILE = "/cs/labs/guykatz/noyahoch/Repo/Marabou/Noya/secnet.nnet"
-TRY_NET_NAME = "ACASXU_experimental_v2a_2_7_try1.nnet"
-# split network #
+# PROPERTY_NAME="/cs/labs/guykatz/noyahoch/Repo/Marabou/resources/resources/properties/acas_property_3.txt"
+inputValues = np.array([[0.63,-1,0,150,250]])
+network = Marabou.MarabouNetworkNNet(NETWORK_NAME)
+printNet(network)
+n1, n2 = split_network_marabou(network, 2)
+printNet(n1)
+printNet(n2)
 
-network = Marabou.read_nnet(NETWORK_NAME)
-# network1 = Marabou.read_nnet(TRY_NET_NAME)
 
-n1, n2 = split_network_marabou(network, 3)
-# printNet(network)
-# printNet(n1)
-# printNet(n2)
-
-inputValues = np.array([[0, 0, 344, 1, 0]])
 res_all = network.evaluate(inputValues, useMarabou=True, options=None)
 res1 = n1.evaluate(inputValues, useMarabou=True, options=None)
+res1 = np.multiply(res1, res1>0)
 res2 = n2.evaluate(res1, useMarabou=True, options=None)
+
 print(res_all)
-print(res1)
+# print(res1)
 print (res2)
+
+

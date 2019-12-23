@@ -19,7 +19,7 @@
 #Marabou File
 from .MarabouNetworkNNet import *
 from .MarabouNetworkTF import *
-from .MarabouCore import *
+from maraboupy.MarabouCore import *
 
 def read_nnet(filename, sbt=False):
     """

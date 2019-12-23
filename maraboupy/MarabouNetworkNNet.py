@@ -32,10 +32,10 @@ class MarabouNetworkNNet(MarabouNetwork.MarabouNetwork):
             filename: path to the .nnet file.
         Attributes:
             numLayers        (int) The number of layers in the network
-            layerSizes       (list of ints) Layer sizes.   
+            layerSizes       (list of ints) Layer sizes.
             inputSize        (int) Size of the input.
             outputSize       (int) Size of the output.
-            maxLayersize     (int) Size of largest layer. 
+            maxLayersize     (int) Size of largest layer.
             inputMinimums    (list of floats) Minimum value for each input.
             inputMaximums    (list of floats) Maximum value for each input.
             inputMeans       (list of floats) Mean value for each input.
@@ -46,47 +46,51 @@ class MarabouNetworkNNet(MarabouNetwork.MarabouNetwork):
             sbt              The SymbolicBoundTightener object
         """
         super().__init__()
+        self.fileName = filename
+        self.perform_sbt = perform_sbt
 
         # read the file and load values
         self.read_nnet(filename)
 
-        # compute variable ranges
-        self.variableRanges()
+    def post_init_settings(self):
+       # compute variable ranges
+       self.variableRanges()
 
-        # identify variables involved in relu constraints
-        relus = self.findRelus()
+       # identify variables involved in relu constraints
+       relus = self.findRelus()
 
-        # build all equations that govern the network
-        equations = self.buildEquations()
-        for equation in equations:
-            e = Equation()
-            for term in equation[:-1]:
-                e.addAddend(term[1], term[0])
-            e.setScalar(equation[-1])
-            self.addEquation(e)
+       # build all equations that govern the network
+       equations = self.buildEquations()
+       for equation in equations:
+           e = Equation()
+           for term in equation[:-1]:
+               e.addAddend(term[1], term[0])
+           e.setScalar(equation[-1])
+           self.addEquation(e)
 
 
-        # add all the relu constraints
-        for relu in relus:
-            self.addRelu(relu[0], relu[1])
+       # add all the relu constraints
+       for relu in relus:
+           self.addRelu(relu[0], relu[1])
 
-        # Set all the bounds defined in the .nnet file
+       # Set all the bounds defined in the .nnet file
 
-        # Set input variable bounds
-        for i, i_var in enumerate(self.inputVars[0]):
-            self.setLowerBound(i_var, self.getInputMinimum(i_var))
-            self.setUpperBound(i_var, self.getInputMaximum(i_var))
+       # Set input variable bounds
+       for i, i_var in enumerate(self.inputVars[0]):
+           self.setLowerBound(i_var, self.getInputMinimum(i_var))
+           self.setUpperBound(i_var, self.getInputMaximum(i_var))
 
-        # Set bounds for forward facing variables
-        for f_var in self.f_variables:
-            self.setLowerBound(f_var, 0.0)
+       # Set bounds for forward facing variables
+       for f_var in self.f_variables:
+           self.setLowerBound(f_var, 0.0)
+       # Set the number of variables
+       self.numVars = self.numberOfVariables()
 
-        # Set the number of variables
-        self.numVars = self.numberOfVariables()
-        if perform_sbt:
-            self.sbt = self.createSBT(filename)
-        else:
-            self.sbt = None
+       if self.perform_sbt:
+           self.sbt = self.createSBT(self.filename)
+       else:
+           self.sbt = None
+
 
     def createSBT(self, filename):
         sbt = MarabouCore.SymbolicBoundTightener()
@@ -99,7 +103,7 @@ class MarabouNetworkNNet(MarabouNetwork.MarabouNetwork):
             for node in range(len(self.biases[layer])):
                 sbt.setBias(layer + 1, node, self.biases[layer][node])
         # Weights
-        for layer in range(len(self.weights)): # starting from the first hidden layer
+        for layer in range(len(self.weights)): # starting from the first.nnet hidden layer
             for target in range(len(self.weights[layer])):
                 for source in range(len(self.weights[layer][target])):
                     sbt.setWeight(layer, source, target, self.weights[layer][target][source])
@@ -163,7 +167,6 @@ class MarabouNetworkNNet(MarabouNetwork.MarabouNetwork):
             weights=[]
             biases = []
             for layernum in range(numLayers):
-
                 previousLayerSize = layerSizes[layernum]
                 currentLayerSize = layerSizes[layernum+1]
                 # weights
@@ -298,7 +301,6 @@ class MarabouNetworkNNet(MarabouNetwork.MarabouNetwork):
                 
                 equations_aux[equations_count].append(-self.biases[layer-1][node])
                 equations_count += 1
-                
         return equations_aux
     """
     Identify all relus and their associated variable numbers.
