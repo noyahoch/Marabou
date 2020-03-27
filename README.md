@@ -35,11 +35,11 @@ paper](https://aisafety.stanford.edu/marabou/MarabouCAV2019.pdf) and the
 [slides](https://aisafety.stanford.edu/marabou/fomlas19.html). 
 
 For more information about the input formats please check the
-[wiki](https://github.com/guykatzz/Marabou/wiki/Marabou-Input-Formats).
+[wiki](https://github.com/NeuralNetworkVerification/Marabou/wiki/Marabou-Input-Formats).
 
 Download
 ------------------------------------------------------------------------------
-The latest version of Marabou is available on [http://github.com/GuyKatzz/Marabou].
+The latest version of Marabou is available on [https://github.com/NeuralNetworkVerification/Marabou].
 
 ## Static binaries
 
@@ -73,6 +73,12 @@ To enable multiprocess build change the last command to:
 ```
 cmake --build . -j PROC_NUM
 ```
+To compile in debug mode (default is release)
+```
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+cmake --build .
+```
+
 The compiled binary will be in the *build* directory, named _Marabou_
 
 To run tests we use [ctest](https://cmake.org/cmake/help/v3.15/manual/ctest.1.html).

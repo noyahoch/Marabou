@@ -1,5 +1,5 @@
 /*********************                                                        */
-/*! \file ReluConstraint.h
+/*! \file DisjunctionConstraint.h
  ** \verbatim
  ** Top contributors (to current version):
  **   Guy Katz, Duligur Ibeling, Christopher Lazarus
@@ -13,23 +13,18 @@
 
  **/
 
-#ifndef __ReluConstraint_h__
-#define __ReluConstraint_h__
+#ifndef __DisjunctionConstraint_h__
+#define __DisjunctionConstraint_h__
 
 #include "Map.h"
 #include "PiecewiseLinearConstraint.h"
 
-class ReluConstraint : public PiecewiseLinearConstraint
+class DisjunctionConstraint : public PiecewiseLinearConstraint
 {
 public:
-    enum PhaseStatus {
-        PHASE_NOT_FIXED = 0,
-        PHASE_ACTIVE = 1,
-        PHASE_INACTIVE = 2,
-    };
-
-    ReluConstraint( unsigned b, unsigned f );
-    ReluConstraint( const String &serializedRelu );
+    ~DisjunctionConstraint() {};
+    DisjunctionConstraint( const List<PiecewiseLinearCaseSplit> &disjuncts );
+    DisjunctionConstraint( const String &serializedDisjunction );
 
     /*
       Return a clone of the constraint.
@@ -121,7 +116,7 @@ public:
 
     /*
       For preprocessing: get any auxiliary equations that this
-      constraint would like to add to the equation pool. In the ReLU
+      constraint would like to add to the equation pool. In the Disjunction
       case, this is an equation of the form aux = f - b, where aux is
       non-negative.
     */
@@ -136,25 +131,9 @@ public:
     virtual void getCostFunctionComponent( Map<unsigned, double> &cost ) const;
 
     /*
-      Returns string with shape: relu, _f, _b
+      Returns string with shape: disjunction, _f, _b
     */
     String serializeToString() const;
-
-    /*
-      Get the index of the B variable.
-    */
-    unsigned getB() const;
-
-    /*
-      Get the current phase status.
-    */
-    PhaseStatus getPhaseStatus() const;
-
-    /*
-      Check if the aux variable is in use and retrieve it
-    */
-    bool auxVariableInUse() const;
-    unsigned getAux() const;
 
     /*
       Return true if and only if this piecewise linear constraint supports
@@ -162,60 +141,44 @@ public:
     */
     bool supportsSymbolicBoundTightening() const;
 
-    bool supportPolarity() const;
-
-    /*
-      Return the polarity of this ReLU, which computes how symmetric
-      the bound of the input to this ReLU is with respect to 0.
-      Let LB be the lowerbound, and UB be the upperbound.
-      If LB >= 0, polarity is 1.
-      If UB <= 0, polarity is -1.
-      If LB < 0, and UB > 0, polarity is ( LB + UB ) / (UB - LB).
-
-      We divide the sum by the width of the interval so that the polarity is
-      always between -1 and 1. The closer it is to 0, the more symmetric the
-      bound is.
-    */
-    double computePolarity() const;
-
-    /*
-      Update the preferred direction for fixing and handling case split
-    */
-    void updateDirection();
-
-    PhaseStatus getDirection() const;
-
 private:
-    unsigned _b, _f;
-    PhaseStatus _phaseStatus;
-    bool _auxVarInUse;
-    unsigned _aux;
+    /*
+      The disjuncts that form this PL constraint
+    */
+    List<PiecewiseLinearCaseSplit> _disjuncts;
 
     /*
-      Denotes which case split to handle first.
-      And which phase status to repair a relu into.
+      The disjuncts that are still possible, given the current
+      lower and upper bounds
     */
-    PhaseStatus _direction;
-
-    PiecewiseLinearCaseSplit getInactiveSplit() const;
-    PiecewiseLinearCaseSplit getActiveSplit() const;
-
-    bool _haveEliminatedVariables;
+    List<PiecewiseLinearCaseSplit> _feasibleDisjuncts;
 
     /*
-      Set the phase status.
+      The list of variables that appear in any of the disjuncts
     */
-    void setPhaseStatus( PhaseStatus phaseStatus );
-
-    static String phaseToString( PhaseStatus phase );
+    Set<unsigned> _participatingVariables;
 
     /*
-      Return true iff b or f are out of bounds.
+      Go over the participating disjuncts and extract from them the list
+      of participating variables
     */
-    bool haveOutOfBoundVariables() const;
+    void extractParticipatingVariables();
+
+    /*
+      Check whether a particular disjunct is satisfied by the current
+      assignment
+    */
+    bool disjunctSatisfied( const PiecewiseLinearCaseSplit &disjunct ) const;
+
+    /*
+      Go over the list of disjuncts and find just the ones that are
+      still possible, given the current varibale bounds
+    */
+    void updateFeasibleDisjuncts();
+    bool disjunctIsFeasible( const PiecewiseLinearCaseSplit &disjunct ) const;
 };
 
-#endif // __ReluConstraint_h__
+#endif // __DisjunctionConstraint_h__
 
 //
 // Local Variables:
