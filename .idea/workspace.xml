@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84bd29bd-8cf1-49f1-bf91-7eb5ef10999b" name="Default Changelist" comment="Merge remote-tracking branch 'NeuralNetworkVerification/master'&#10;&#10;# Conflicts:&#10;#&#9;maraboupy/Marabou.py">
+      <change afterPath="$PROJECT_DIR$/maraboupy/MarabouNetworkONNX.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maraboupy/examples/MarabouNetworkONNXExample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maraboupy/examples/networks/AutoTaxi.onnx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maraboupy/examples/networks/AutoTaxi.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maraboupy/examples/networks/graph_test_cnn.onnx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maraboupy/examples/networks/graph_test_medium.onnx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/DisjunctionConstraint.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/DisjunctionConstraint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/tests/Test_DisjunctionConstraint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/system_tests/Test_Disjunction.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Noya/split_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/Noya/split_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maraboupy/AcasNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/maraboupy/AcasNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maraboupy/Marabou.py" beforeDir="false" afterPath="$PROJECT_DIR$/maraboupy/Marabou.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maraboupy/examples/AcasUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/maraboupy/examples/AcasUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maraboupy/examples/MarabouCoreExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/maraboupy/examples/MarabouCoreExample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maraboupy/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/maraboupy/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Debug.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Debug.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/MString.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/MString.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Vector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/GlobalConfiguration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/GlobalConfiguration.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/GlobalConfiguration.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/GlobalConfiguration.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/OptionParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/OptionParser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/Options.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/Options.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/Options.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/Options.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/DivideStrategy.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/DivideStrategy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/DnCManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/DnCManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/DnCManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/DnCManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/DnCMarabou.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/DnCMarabou.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/DnCMarabou.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/DnCMarabou.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/Engine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Engine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/Equation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Equation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/Equation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Equation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/IEngine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/IEngine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/Marabou.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Marabou.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/MarabouError.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/MarabouError.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/PiecewiseLinearCaseSplit.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/PiecewiseLinearCaseSplit.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/PiecewiseLinearCaseSplit.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/PiecewiseLinearCaseSplit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/PiecewiseLinearConstraint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/PiecewiseLinearConstraint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/PiecewiseLinearConstraint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/PiecewiseLinearConstraint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/ReluConstraint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/ReluConstraint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/ReluConstraint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/ReluConstraint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/SmtCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/SmtCore.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/SmtCore.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/SmtCore.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/Tableau.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Tableau.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/tests/MockEngine.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/tests/MockEngine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/tests/Test_ReluConstraint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/tests/Test_ReluConstraint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input_parsers/AcasParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/input_parsers/AcasParser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system_tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/system_tests/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system_tests/Test_relu.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/system_tests/Test_relu.h" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Noya/split_network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="70" column="8" selection-start-line="49" selection-start-column="4" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/maraboupy/Marabou.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding>
+                <element signature="e#655#688#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maraboupy/MarabouNetworkNNet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#652#679#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maraboupy/MarabouUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maraboupy/MarabouCore.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="51">
+                <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>test</find>
+      <find>maraboucore</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Noya/split_network.py" />
+        <option value="$PROJECT_DIR$/maraboupy/MarabouUtils.py" />
+        <option value="$PROJECT_DIR$/maraboupy/MarabouCore.cpp" />
+        <option value="$PROJECT_DIR$/maraboupy/Marabou.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/Marabou.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-5" />
+    <option name="y" value="-5" />
+    <option name="width" value="265" />
+    <option name="height" value="280" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Marabou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Marabou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Marabou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Marabou" type="462c0819:PsiDirectoryNode" />
+              <item name="maraboupy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Marabou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Marabou" type="462c0819:PsiDirectoryNode" />
+              <item name="maraboupy" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Marabou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Marabou" type="462c0819:PsiDirectoryNode" />
+              <item name="Noya" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.multi_input_test">
+    <configuration name="multi_input_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Marabou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/maraboupy/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/maraboupy/test/multi_input_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="split_network" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Marabou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Noya" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Noya/split_network.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.multi_input_test" />
+        <item itemvalue="Python.split_network" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84bd29bd-8cf1-49f1-bf91-7eb5ef10999b" name="Default Changelist" comment="" />
+      <created>1585071254860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585071254860</updated>
+      <workItem from="1585071262339" duration="1500000" />
+      <workItem from="1585296729177" duration="1274000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2774000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25383994" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32978722" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32978722" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32978722" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Marabou$split_network.coverage" NAME="split_network Coverage Results" MODIFIED="1585073712434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Noya" />
+    <SUITE FILE_PATH="coverage/Marabou$multi_input_test.coverage" NAME="multi_input_test Coverage Results" MODIFIED="1585297082184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/maraboupy/test" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/maraboupy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Noya/split_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="70" column="8" selection-start-line="49" selection-start-column="4" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maraboupy/MarabouNetworkNNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#652#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maraboupy/MarabouUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="51">
+            <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maraboupy/MarabouCore.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maraboupy/Marabou.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#655#688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
