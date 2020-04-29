@@ -1,7 +1,7 @@
 import argparse
 import os
 import subprocess
-import sys
+import os
 import threading
 
 DEFAULT_TIMEOUT = 600
@@ -77,14 +77,14 @@ def run_marabou(marabou_binary, network_path, property_path, expected_result, ti
     :return: True / False if test pass or not
     '''
     if not os.access(marabou_binary, os.X_OK):
-        sys.exit(
+        os.exit(
             '"{}" does not exist or is not executable'.format(marabou_binary))
     if not os.path.isfile(network_path):
-        sys.exit('"{}" does not exist or is not a file'.format(network_path))
+        os.exit('"{}" does not exist or is not a file'.format(network_path))
     if not os.path.isfile(property_path):
-        sys.exit('"{}" does not exist or is not a file'.format(property_path))
+        os.exit('"{}" does not exist or is not a file'.format(property_path))
     if expected_result not in {'SAT', 'UNSAT'}:
-        sys.exit('"{}" is not a marabou supported result'.format(expected_result))
+        os.exit('"{}" is not a marabou supported result'.format(expected_result))
 
     args = [marabou_binary, network_path, property_path]
     if isinstance(arguments, list):
@@ -105,12 +105,12 @@ def run_mpsparser(mps_binary, network_path, expected_result, arguments=None):
     :return: True / False if test pass or not
     '''
     if not os.access(mps_binary, os.X_OK):
-        sys.exit(
+        os.exit(
             '"{}" does not exist or is not executable'.format(mps_binary))
     if not os.path.isfile(network_path):
-        sys.exit('"{}" does not exist or is not a file'.format(network_path))
+        os.exit('"{}" does not exist or is not a file'.format(network_path))
     if expected_result not in {'SAT', 'UNSAT'}:
-        sys.exit('"{}" is not a marabou supported result'.format(expected_result))
+        os.exit('"{}" is not a marabou supported result'.format(expected_result))
 
     args = [mps_binary, network_path]
     if isinstance(arguments, list):
@@ -154,6 +154,6 @@ def main():
 
 if __name__ == "__main__":
     if main():
-        sys.exit(0)
+        os.exit(0)
     else:
-        sys.exit(1)
+        os.exit(1)

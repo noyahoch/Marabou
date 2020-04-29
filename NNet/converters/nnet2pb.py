@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np 
-import sys
+import os
 from tensorflow.python.framework import graph_util
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
@@ -68,13 +68,13 @@ def freeze_graph(sess, output_graph_name, output_node_names):
   
 if __name__=='__main__':
     # Read user inputs and run writePB function
-    if len(sys.argv)>1:
-        nnetFile = sys.argv[1]
+    if len(os.argv)>1:
+        nnetFile = os.argv[1]
         pbFile = ""
         output_node_names = "y_out"
-        if len(sys.argv)>2:
-            pbFile = sys.argv[2]
-        if len(sys.argv)>3:
+        if len(os.argv)>2:
+            pbFile = os.argv[2]
+        if len(os.argv)>3:
             output_node_names = argv[3]
         nnet2pb(nnetFile,pbFile,output_node_names)
     else:

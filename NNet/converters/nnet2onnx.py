@@ -1,5 +1,5 @@
 import numpy as np 
-import sys
+import os
 import onnx
 from onnx import helper, numpy_helper, TensorProto
 from NNet.utils.readNNet import readNNet
@@ -73,11 +73,11 @@ def nnet2onnx(nnetFile, onnxFile="", outputVar = "y_out", inputVar="X", normaliz
 
 if __name__ =='__main__':
     # Read user inputs and run nnet2onnx function for different numbers of inputs
-    if len(sys.argv)>1:
-        nnetFile = sys.argv[1]
-        if len(sys.argv)>2:
-            onnxFile = sys.argv[2]
-            if len(sys.argv)>3:
+    if len(os.argv)>1:
+        nnetFile = os.argv[1]
+        if len(os.argv)>2:
+            onnxFile = os.argv[2]
+            if len(os.argv)>3:
                 outputName = argv[3]
                 nnet2onnx(nnetFile,onnxFile,outputName)
             else: nnet2onnx(nnetFile,onnxFile)

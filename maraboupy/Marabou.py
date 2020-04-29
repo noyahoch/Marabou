@@ -19,12 +19,8 @@
 #Marabou File
 from .MarabouNetworkNNet import *
 from .MarabouNetworkTF import *
-<<<<<<< HEAD
 from .MarabouCore import *
-=======
-from .MarabouNetworkONNX import *
-from .MarabouCore import *
->>>>>>> NeuralNetworkVerification/master
+# from .MarabouNetworkONNX import *
 
 def read_nnet(filename, sbt=False):
     """

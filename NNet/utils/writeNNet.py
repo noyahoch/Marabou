@@ -40,7 +40,7 @@ def writeNNet(weights,biases,inputMins,inputMaxes,means,ranges,fileName):
 
         #Extract the necessary information and write the header information
         numLayers = len(weights)
-        inputSize = weights[0].shape[0]
+        inputSize = len(weights[0][0]) # noyah
         outputSize = len(biases[-1])
         maxLayerSize = inputSize
         
@@ -70,20 +70,12 @@ def writeNNet(weights,biases,inputMins,inputMaxes,means,ranges,fileName):
         # The pattern is repeated by next writing the weights from the first hidden layer to the second hidden layer,
         # followed by the biases of the second hidden layer.
         ##################
+    with open(fileName,'a') as f2:
         for w,b in zip(weights,biases):
-            for j in range(w.shape[1]):
-                for i in range(w.shape[0]):
+            for i in range(len(w)):
+                for j in range(len(w[0])):
                     f2.write("%.5e," % w[i][j]) #Five digits written. More can be used, but that requires more more space.
                 f2.write("\n")
                 
             for i in range(len(b)):
                 f2.write("%.5e,\n" % b[i]) #Five digits written. More can be used, but that requires more more space.
-#
-# weights =
-# biases =
-# inputMins = [0.0,-1.0,-1.0,2.0,0.0]
-# inputMaxes = [2.0,1.0,1.0,5.0,10.0]
-# means =
-# ranges =
-# fileName = '/cs/labs/guykatz/noyahoch/NNet/nnet/NoyaNetwork'
-# writeNNet(weights,biases,inputMins,inputMaxes,means,ranges, fileName)

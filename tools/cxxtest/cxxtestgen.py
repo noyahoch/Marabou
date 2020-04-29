@@ -21,7 +21,7 @@ Generate test source file for CxxTest.
 '''
 
 import re
-import sys
+import os
 import getopt
 import glob
 import string
@@ -58,30 +58,30 @@ def usage( problem = None ):
     '''Print usage info and exit'''
     if problem is None:
         print usageString()
-        sys.exit(0)
+        os.exit(0)
     else:
-        sys.stderr.write( usageString() )
+        os.stderr.write(usageString())
         abort( problem )
 
 def usageString():
     '''Construct program usage string'''
-    return __doc__ % sys.argv[0]
+    return __doc__ % os.argv[0]
 
 def abort( problem ):
     '''Print error message and exit'''
-    sys.stderr.write( '\n' )
-    sys.stderr.write( problem )
-    sys.stderr.write( '\n\n' )
-    sys.exit(2)
+    os.stderr.write('\n')
+    os.stderr.write(problem)
+    os.stderr.write('\n\n')
+    os.exit(2)
 
 def parseCommandline():
     '''Analyze command line arguments'''
     try:
-        options, patterns = getopt.getopt( sys.argv[1:], 'o:r:',
-                                           ['version', 'output=', 'runner=', 'gui=',
+        options, patterns = getopt.getopt(os.argv[1:], 'o:r:',
+                                          ['version', 'output=', 'runner=', 'gui=',
                                             'error-printer', 'abort-on-fail', 'have-std', 'no-std',
                                             'have-eh', 'no-eh', 'template=', 'include=',
-                                            'root', 'part', 'no-static-init', 'factor', 'longlong='] )
+                                            'root', 'part', 'no-static-init', 'factor', 'longlong='])
     except getopt.error, problem:
         usage( problem )
     setOptions( options )
@@ -141,8 +141,8 @@ def setOptions( options ):
 
 def printVersion():
     '''Print CxxTest version and exit'''
-    sys.stdout.write( "This is CxxTest version 3.10.1.\n" )
-    sys.exit(0)
+    os.stdout.write("This is CxxTest version 3.10.1.\n")
+    os.exit(0)
 
 def setFiles( patterns ):
     '''Set input files specified on command line'''
@@ -245,7 +245,7 @@ def scanLineForSuiteStart( fileName, lineNo, line ):
         startSuite( m.group(1), fileName, lineNo, 0 )
     m = generatedSuite_re.search( line )
     if m:
-        sys.stdout.write( "%s:%s: Warning: Inline test suites are deprecated.\n" % (fileName, lineNo) )
+        os.stdout.write("%s:%s: Warning: Inline test suites are deprecated.\n" % (fileName, lineNo))
         startSuite( m.group(1), fileName, lineNo, 1 )
 
 def startSuite( name, file, line, generated ):
@@ -390,7 +390,7 @@ def startOutputFile():
     if outputFileName is not None:
         output = open( outputFileName, 'w' )
     else:
-        output = sys.stdout
+        output = os.stdout
     output.write( "/* Generated file, do not edit */\n\n" )
     return output
 

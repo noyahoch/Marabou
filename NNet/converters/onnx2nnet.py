@@ -1,5 +1,5 @@
 import numpy as np
-import sys
+import os
 import onnx
 from onnx import numpy_helper
 from NNet.utils.writeNNet import writeNNet
@@ -118,11 +118,11 @@ if __name__=='__main__':
     # Read user inputs and run onnx2nnet function
     # If non-default values of input bounds and normalization constants are needed, 
     # this function should be run from a script instead of the command line
-    if len(sys.argv)>1:
+    if len(os.argv)>1:
         print("WARNING: Using the default values of input bounds and normalization constants")
-        onnxFile = sys.argv[1]
-        if len(sys.argv)>2:
-            nnetFile = sys.argv[2]
+        onnxFile = os.argv[1]
+        if len(os.argv)>2:
+            nnetFile = os.argv[2]
             onnx2nnet(onnxFile,nnetFile=nnetFile)
         else: onnx2nnet(onnxFile)
     else:
