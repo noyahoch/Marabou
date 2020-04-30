@@ -71,7 +71,7 @@ def extract_activation_pattern(ev_res):
 
 def neg_property_from_activation_pattern(ap):
     # make each >=0 number to -epsilon, makee < number to>=0
-    neg_ap = np.where(ap>0, np.full_like(ap, -0.001), np.ones_like(ap))
+    neg_ap = np.where(ap>=0, np.full_like(ap, 0), np.ones_like(ap))
     return neg_ap
 def create_property_file(first_property, ap, ap_is_x, prop_name):
     lines = []
@@ -80,9 +80,11 @@ def create_property_file(first_property, ap, ap_is_x, prop_name):
         for ind, val in enumerate(ap):
             if val > 0:
                 sign = '>='
+                s_val = 0
             else:
                 sign = '<='
-            lines.append('x{} {} 0\n'.format(ind, sign))
+                s_val = -0.1
+            lines.append('x{} {} {}\n'.format(ind, sign, s_val))
         with open(first_property) as first:
             for line in first:
                 if not line.startswith('x'):
@@ -95,9 +97,11 @@ def create_property_file(first_property, ap, ap_is_x, prop_name):
         for ind, val in enumerate(ap):
             if val > 0:
                 sign = '>='
+                s_val = 0
             else:
                 sign = '<='
-            lines.append('+y{} +y{} {} 0\n'.format(ind, ind, sign))
+                s_val = -0.1
+            lines.append('+y{} +y{} {} 0\n'.format(ind, ind, sign, s_val))
     fileName = os.path.join('properties', prop_name + '.txt')
     with open(fileName, 'w+') as f:
         f.writelines(lines)
