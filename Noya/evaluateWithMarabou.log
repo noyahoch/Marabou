@@ -11,11 +11,11 @@ Input bounds:
 
 Engine::solve: Initial statistics
 
-18:53:11 Statistics update:
+16:52:01 Statistics update:
 	--- Time Statistics ---
-	Total time elapsed: 4 milli (00:00:00)
+	Total time elapsed: 5 milli (00:00:00)
 		Main loop: 0 milli (00:00:00)
-		Preprocessing time: 4 milli (00:00:00)
+		Preprocessing time: 5 milli (00:00:00)
 		Unknown: 0 milli (00:00:00)
 	Breakdown for main loop:
 		[0.00%] Simplex steps: 0 milli
@@ -73,11 +73,11 @@ Engine::solve: Initial statistics
 
 Engine::solve: SAT assignment found
 
-18:53:11 Statistics update:
+16:52:01 Statistics update:
 	--- Time Statistics ---
-	Total time elapsed: 4 milli (00:00:00)
+	Total time elapsed: 5 milli (00:00:00)
 		Main loop: 0 milli (00:00:00)
-		Preprocessing time: 4 milli (00:00:00)
+		Preprocessing time: 5 milli (00:00:00)
 		Unknown: 0 milli (00:00:00)
 	Breakdown for main loop:
 		[0.00%] Simplex steps: 0 milli

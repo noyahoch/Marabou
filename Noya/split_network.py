@@ -134,9 +134,10 @@ def split_check_unsat(network_PATH, property_path, split_level, input,print = Tr
 
 if __name__ == '__main__':
     NETWORK_PATH = "/cs/labs/guykatz/noyahoch/Repo/Marabou/resources/nnet/acasxu/ACASXU_experimental_v2a_2_7.nnet"
-    PROPERTY_PATH ="/cs/usr/noyahoch/Marabou/Marabou/resources/properties/acas_property_3.txt"
+    PROPERTY_PATH ="/cs/usr/noyahoch/Marabou/Marabou/resources/properties/acas_property_4.txt"
     inputValues = np.array([[0.63, -1, 0, 150, 250]])
-    split_check_unsat(NETWORK_PATH, PROPERTY_PATH, 2, inputValues)
+    r1 = split_check_unsat(NETWORK_PATH, PROPERTY_PATH, 2, inputValues)
+    print(r1)
     # create network
     # network = Marabou.MarabouNetworkNNet(NETWORK_NAME)
     # printNet(network)
